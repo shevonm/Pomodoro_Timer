@@ -30,6 +30,9 @@ export function minutesToDuration(givenMinutes) {
  */
 
 export function secondsToDuration(givenSeconds) {
+  if (isNaN(givenSeconds) ) {
+    return `25:00`
+  }
   const minutes = Math.floor((givenSeconds % 3600) / 60)
     .toString()
     .padStart(2, "0");
